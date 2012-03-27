@@ -1,2 +1,0 @@
-#!/bin/bash
-/usr/local/bin/python3.2 /usr/local/src/gcam.compiled.python3.2.zip "$@"
