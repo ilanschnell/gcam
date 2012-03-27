@@ -1356,8 +1356,7 @@ class Display(Logger):
         w.refresh()
 
 
-if __name__ == '__main__':
-
+def main():
     logger = logging.getLogger(params._PROGRAM_NAME_SHORT)
 
     try:
@@ -1380,3 +1379,6 @@ if __name__ == '__main__':
             exit('\n'.join(exception.args))
         else:
             raise
+
+if __name__ == '__main__':
+    main()
