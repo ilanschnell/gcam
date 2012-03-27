@@ -10,7 +10,7 @@
 
 from lru_cache import lru_cache
 
-@lru_cache(maxsize=None)
+@lru_cache()
 def numsorted(alist):
     # inspired by Alex Martelli
     # http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/52234
