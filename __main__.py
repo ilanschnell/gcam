@@ -6,13 +6,14 @@
 
 # The code for this project is generally limited to 79 characters per line.
 
-import argparse, collections, curses, datetime, functools, inspect
+import argparse, collections, curses, datetime, inspect
 import itertools, locale, logging, signal, subprocess, sys, threading, time
 
 # Local imports
 import common, errors, params
 from prettytable import PrettyTable
-from numsort import numsorted  # Uses "@functools.lru_cache(maxsize=None)"
+from lru_cache import lru_cache
+from numsort import numsorted  # Uses "@lru_cache()"
 
 class ArgParser(argparse.ArgumentParser):
     """Parse and store input arguments. Arguments on the command line override
@@ -780,7 +781,7 @@ class RecordGroupDelta(RecordGroup):
             return '{:^{}}'.format('N/A', width + 1)
 
     @staticmethod
-    @functools.lru_cache(maxsize=None)
+    @lru_cache()
     def _mmfa_ipf(num_avail_shares, demands):
         """Return the sequence of shares corresponding to the provided number
         of available shares and the sequence of demands. Max-min fair
