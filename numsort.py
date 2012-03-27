@@ -51,7 +51,7 @@ def _generate_index(astr):
     
 def _test():
     initial_list = [ 'gad', 'gad-10', 'zeus', 'gad-5', 'gad-0', 'gad-12' ]
-    sorted_list = numsorted(initial_list)
+    sorted_list = numsorted(tuple(initial_list))
     import pprint
     print("Before sorting...")
     pprint.pprint (initial_list)
