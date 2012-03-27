@@ -24,8 +24,9 @@ class ArgParser(argparse.ArgumentParser):
         epilog = "Pressing the '{}' key pauses or resumes the display.".format(
                  params.DISPLAY_PAUSE_KEY)
 
-        super().__init__(description=params._PROGRAM_NAME, epilog=epilog,
-                         prog=params._PROGRAM_NAME_SHORT)
+        argparse.ArgumentParser.__init__(self,
+            description=params._PROGRAM_NAME, epilog=epilog,
+            prog=params._PROGRAM_NAME_SHORT)
 
         self._add_misc_args()
         self._add_logging_args()
